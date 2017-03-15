@@ -25,3 +25,10 @@ Thermostat.prototype.decreaseTemp = function () {
 Thermostat.prototype.resetTemp = function () {
   this.currentTemp = this.DEFAULT
 };
+
+Thermostat.prototype.energyUsage = function () {
+  if(this.currentTemp < 18) return "Low";
+  if(this.currentTemp < 25) return "Medium";
+  if(this.currentTemp > 25) return "High";
+
+};

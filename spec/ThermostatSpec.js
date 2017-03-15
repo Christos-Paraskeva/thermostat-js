@@ -49,5 +49,28 @@ describe('Thermostat', function(){
     expect(thermostat.currentTemp).toEqual(25)
   });
 
+  it('cannot increase temperature above 32 if powerSaving is false', function(){
+    thermostat.powerSaving = false;
+    for(var i = 0; i <15; i++)
+    {
+      thermostat.increaseTemp();
+    }
+    expect(thermostat.currentTemp).toEqual(32)
+  });
+
+  it("returns 'Low' if temperature is below 18", function(){
+    thermostat.currentTemp = 17;
+    expect(thermostat.energyUsage()).toEqual("Low");
+  });
+
+  it("returns 'Medium' if temperature is below 25", function(){
+    thermostat.currentTemp = 24;
+    expect(thermostat.energyUsage()).toEqual("Medium");
+  });
+
+  it("returns 'High' if temperature is above 25", function(){
+    thermostat.currentTemp = 26;
+    expect(thermostat.energyUsage()).toEqual("High");
+  });
 
 });
