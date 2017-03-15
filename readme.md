@@ -14,6 +14,16 @@ As a thermostat
 So that it doesn't get too cold
 The temp can't be set below 10 degrees
 
+As a user
+So that I can reset the temperature
+I want to reset the thermostat
+
+As a user
+So that I can know the current energy usage
+I want to ask the thermostat for the current energy usage
+
+
+
 As a thermostat
 When power saving mode is on
 The max temp is 25 degrees
@@ -25,11 +35,3 @@ The max temp is 32 degrees
 As a thermostat
 So that I can save power
 Power saving mode will be on by default
-
-As a user
-So that I can reset the temperature
-I want to reset the thermostat
-
-As a user
-So that I can know the current energy usage
-I want to ask the thermostat for the current energy usage
