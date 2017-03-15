@@ -11,7 +11,7 @@ So that I don't get too warm
 I want to decrease temp with an down function
 
 As a thermostat
-So that it doesnt get too cold
+So that it doesn't get too cold
 The temp can't be set below 10 degrees
 
 As a thermostat
