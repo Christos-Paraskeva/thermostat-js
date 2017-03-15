@@ -1,14 +1,14 @@
 function Thermostat() {
   this.DEFAULT = 20
   this.currentTemp = this.DEFAULT
-  this.powerSaving = true
+  this.energySaving = true
 };
 
 Thermostat.prototype.increaseTemp = function () {
-  if (this.powerSaving === true && this.currentTemp < 25) {
+  if (this.energySaving === true && this.currentTemp < 25) {
     this.currentTemp++;
   }
-  else if (this.powerSaving === false && this.currentTemp < 32) {
+  else if (this.energySaving === false && this.currentTemp < 32) {
     this.currentTemp++;
   }
 };

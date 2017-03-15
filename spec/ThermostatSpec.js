@@ -38,7 +38,7 @@ describe('Thermostat', function(){
   });
 
   it('is on power saving mode by default', function (){
-    expect(thermostat.powerSaving).toBe(true)
+    expect(thermostat.energySaving).toBe(true)
   });
 
   it('cannot increase temperature above 25 if powerSaving is true', function(){
@@ -50,7 +50,7 @@ describe('Thermostat', function(){
   });
 
   it('cannot increase temperature above 32 if powerSaving is false', function(){
-    thermostat.powerSaving = false;
+    thermostat.energySaving = false;
     for(var i = 0; i <15; i++)
     {
       thermostat.increaseTemp();
