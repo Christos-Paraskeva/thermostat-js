@@ -31,5 +31,11 @@ describe('Thermostat', function(){
     expect(thermostat.currentTemp).toEqual(10);
   });
 
+  it('can reset the thermostat to the default temperature', function(){
+    thermostat.increaseTemp();
+    thermostat.resetTemp();
+    expect(thermostat.currentTemp).toEqual(thermostat.DEFAULT)
+  });
+
 
 });

@@ -15,3 +15,7 @@ Thermostat.prototype.decreaseTemp = function () {
     // throw/alert user
   }
 };
+
+Thermostat.prototype.resetTemp = function () {
+  this.currentTemp = this.DEFAULT
+};
