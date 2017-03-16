@@ -5,6 +5,7 @@ describe('Thermostat', function(){
     thermostat = new Thermostat();
   });
 
+describe('Upon Instantiating', function() {
   it('has a default temperature of 20 degrees', function (){
     expect(thermostat.DEFAULT).toEqual(20)
   });
@@ -12,7 +13,9 @@ describe('Thermostat', function(){
   it('has a current temperature of 20 degrees when started up', function (){
     expect(thermostat.currentTemp).toEqual(20)
   });
+});
 
+describe('Temperature Control', function() {
   it('can increase the temperature', function(){
     thermostat.increaseTemp();
     expect(thermostat.currentTemp).toEqual(thermostat.DEFAULT + 1);
@@ -31,12 +34,16 @@ describe('Thermostat', function(){
     expect(thermostat.currentTemp).toEqual(10);
   });
 
+// test to alert if try to go below 10 degrees
+
   it('can reset the thermostat to the default temperature', function (){
     thermostat.increaseTemp();
     thermostat.resetTemp();
     expect(thermostat.currentTemp).toEqual(thermostat.DEFAULT)
   });
+});
 
+describe('Power Saving Tests', function () {
   it('is on power saving mode by default', function (){
     expect(thermostat.energySaving).toBe(true)
   });
@@ -58,6 +65,14 @@ describe('Thermostat', function(){
     expect(thermostat.currentTemp).toEqual(32)
   });
 
+  it("allows you to toggle energySaving off and on", function (){
+    thermostat.toggleEnergySaving();
+    expect(thermostat.energySaving).toBe(false)
+  });
+});
+
+describe('Energy Usage', function () {
+
   it("returns 'Low' if temperature is below 18", function(){
     thermostat.currentTemp = 17;
     expect(thermostat.energyUsage()).toEqual("Low");
@@ -72,5 +87,5 @@ describe('Thermostat', function(){
     thermostat.currentTemp = 26;
     expect(thermostat.energyUsage()).toEqual("High");
   });
-
+});
 });

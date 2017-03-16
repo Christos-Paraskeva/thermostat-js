@@ -4,7 +4,7 @@ function Thermostat() {
   this.energySaving = true
 };
 
-Thermostat.prototype.increaseTemp = function () {
+Thermostat.prototype.increaseTemp = function() {
   if (this.energySaving === true && this.currentTemp < 25) {
     this.currentTemp++;
   }
@@ -13,22 +13,30 @@ Thermostat.prototype.increaseTemp = function () {
   }
 };
 
-Thermostat.prototype.decreaseTemp = function () {
+Thermostat.prototype.decreaseTemp = function() {
   if(this.currentTemp >= 11){
      this.currentTemp--;
   }
-  else{
+  else {
     // throw/alert user
   }
 };
 
-Thermostat.prototype.resetTemp = function () {
+Thermostat.prototype.resetTemp = function() {
   this.currentTemp = this.DEFAULT
 };
 
-Thermostat.prototype.energyUsage = function () {
+Thermostat.prototype.energyUsage = function() {
   if(this.currentTemp < 18) return "Low";
   if(this.currentTemp < 25) return "Medium";
-  if(this.currentTemp > 25) return "High";
+  if(this.currentTemp >= 25) return "High";
+};
 
+Thermostat.prototype.toggleEnergySaving = function() {
+  if (this.energySaving === true) {
+    this.energySaving = false
+  }
+  else if (this.energySaving === false) {
+    this.energySaving = true
+  }
 };
