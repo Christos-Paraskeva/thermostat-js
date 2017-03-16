@@ -15,6 +15,7 @@
         $( 'button#up' ).click(function( event ) {
           thermostat.increaseTemp();
           $('.currentTemp').html(thermostat.currentTemp);
+          $('.thermometer:before').css("height", "60%");
         });
 
         $( 'button#down' ).click(function( event ) {
@@ -42,6 +43,7 @@
     </script>
 
     <div class="thermometer"> </div>​
+    <div class="bulb"> </div>
 
     <h2 class='currentTemp'> </h2>
 
