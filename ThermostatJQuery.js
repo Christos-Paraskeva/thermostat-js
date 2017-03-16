@@ -19,7 +19,7 @@
       };
       thermostat.increaseTemp();
       $('.currentTemp').html(thermostat.currentTemp);
-      $('.thermometer:before').css("height", '40%');
+      $('.bar').css("height", "50px");
     });
 
     $( 'button#down' ).click(function( event ) {
