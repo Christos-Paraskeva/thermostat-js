@@ -5,10 +5,15 @@
   </head>
   <body>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="src/Thermostat.js"></script>
     <script>
       $( document ).ready(function() {
+        thermostat = new Thermostat;
         $( 'button#up' ).click(function( event ) {
-          alert('hello!');
+          thermostat.increaseTemp();
+        });
+        $( 'button#down' ).click(function( event ) {
+          thermostat.decreaseTemp();
         });
       });
     </script>
@@ -24,7 +29,6 @@
     <button type='button' id='power saving'> Power Saving Mode </button>
 
     <h2> Energy State </h2>
-    <script src="src/Thermostat.js"></script>
 
   </body>
 </html>
