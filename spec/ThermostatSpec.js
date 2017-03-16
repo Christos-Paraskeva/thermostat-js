@@ -34,7 +34,14 @@ describe('Temperature Control', function() {
     expect(thermostat.currentTemp).toEqual(10);
   });
 
-// test to alert if try to go below 10 degrees
+  it('should alert user if tries to go below 10 degrees', function() {
+    spyOn(window, 'alert');
+    for(var i = 0; i <11; i++)
+    {
+      thermostat.decreaseTemp();
+    }
+    expect(window.alert).toHaveBeenCalledWith('cannot decrease temperature below 10 degrees');
+  });
 
   it('can reset the thermostat to the default temperature', function (){
     thermostat.increaseTemp();

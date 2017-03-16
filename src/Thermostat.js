@@ -18,7 +18,7 @@ Thermostat.prototype.decreaseTemp = function() {
      this.currentTemp--;
   }
   else {
-    // throw/alert user
+    alert('cannot decrease temperature below 10 degrees');
   }
 };
 
