@@ -15,6 +15,15 @@
         $( 'button#down' ).click(function( event ) {
           thermostat.decreaseTemp();
         });
+        $( 'button#psm' ).click(function( event ) {
+          thermostat.toggleEnergySaving();
+          if (thermostat.energySaving === true) {
+            $("div").css("background-color", "green");
+          }
+          else if (thermostat.energySaving === false) {
+            $("div").css("background-color", "red");
+          };
+        });
       });
     </script>
 
@@ -26,7 +35,11 @@
 
     <button type='button' id='reset'> Reset </br> Button </button>
 
-    <button type='button' id='power saving'> Power Saving Mode </button>
+    <button type='button' id='psm'> Power Saving Mode </button>
+
+    <div class='psm'>
+
+    </div>
 
     <h2> Energy State </h2>
 
