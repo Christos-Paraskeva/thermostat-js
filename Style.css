@@ -1,6 +1,15 @@
 body {
+  margin-left: 40px;
   background-color: cadetblue;
   font-size: 20px;
+}
+
+.main {
+  margin-top: 50px;
+  text-align: center;
+  width: 700px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 button {
@@ -19,7 +28,9 @@ button:hover {
 }
 
 .usage {
-  margin: 40px;
+  margin-top: 40px;
+  margin-left: auto;
+  margin-right: auto;
   width: 55px;
   height: 55px;
   border-radius: 50px;
@@ -32,7 +43,8 @@ button:hover {
   width: 20px;
   height: 200px;
   background-color: green;
-  margin: 20px;
+  margin-left: auto;
+  margin-right: auto;
   border-radius: 50px;
   border-top: 2px solid black;
   border-left: 2px solid black;
@@ -41,23 +53,26 @@ button:hover {
 }
 
 .thermometer:before {
+  margin-left: auto;
+  margin-right: auto;
     position:absolute;
     z-index:-1;
     top:0;
     left:0;
     width:100%;
-    height:95%;
+    height:55%;
     content:"";
     background-color: white;
     border-radius: 50px 50px 0 0;
 }
 
 .bulb {
+  margin-left: auto;
+  margin-right: auto;
   border-bottom: 2px solid black;
   border-left: 2px solid black;
   border-right: 2px solid black;
-  margin-top: -55px;
-  margin-left: 5px;
+  margin-top: -45px;
   background-color: green;
   border-radius: 50%;
   width: 50px;

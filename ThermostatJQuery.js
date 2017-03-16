@@ -5,19 +5,6 @@
 
     var usage = thermostat.energyUsage();
 
-    // function checkUsage() {
-    //   if (usage === "Low") {
-    //     $('.usage').css("background-color", "green");
-    //   }
-    //   else if (usage === "Medium") {
-    //     $('.usage').css("background-color", "blue");
-    //   }
-    //   else {
-    //     $('.usage').css("background-color", "red");
-    //   };
-    // };
-    // checkUsage();
-
     $( 'button#up' ).click(function( event ) {
       var usage = thermostat.energyUsage();
       console.log(usage);
@@ -32,7 +19,7 @@
       };
       thermostat.increaseTemp();
       $('.currentTemp').html(thermostat.currentTemp);
-      $('.thermometer:before').css("height", "60%");
+      $('.thermometer:before').css("height", '40%');
     });
 
     $( 'button#down' ).click(function( event ) {
@@ -56,7 +43,7 @@
       $('.usage').css("background-color", "blue");
       $('.currentTemp').html(thermostat.currentTemp);
       thermostat.energySaving = true;
-      $(".psm").css("background-color", "green");
+      $("button#psm").css("background-color", "green");
     });
 
     $( 'button#psm' ).click(function( event ) {
