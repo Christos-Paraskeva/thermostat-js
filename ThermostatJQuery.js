@@ -3,6 +3,17 @@
 
     $('.currentTemp').html(thermostat.currentTemp);
 
+    // $.get('http://api.openweathermap.org/data/2.5/weather?q=' + city + '&appid=a3d9eb01d4de82b9b8d0849ef604dbed&units=metric', function(data) {
+    //   $('#currentTempOutside').html(data.main.temp);
+    // })
+
+    $('#City').change(function() {
+      var city = $('#City').val();
+      $.get('http://api.openweathermap.org/data/2.5/weather?q=' + city + '&appid=a3d9eb01d4de82b9b8d0849ef604dbed&units=metric', function(data) {
+      $('#currentTempOutside').html(data.main.temp);
+    });
+  });
+
     var usage = thermostat.energyUsage();
 
     $( 'button#up' ).click(function( event ) {
@@ -19,7 +30,7 @@
       };
       thermostat.increaseTemp();
       $('.currentTemp').html(thermostat.currentTemp);
-      $('.bar').css("height", "50px");
+      $('.bar').css("height", "+=20");
     });
 
     $( 'button#down' ).click(function( event ) {
