@@ -30,7 +30,12 @@
       };
       thermostat.increaseTemp();
       $('.currentTemp').html(thermostat.currentTemp);
-      $('.bar').css("height", "+=20");
+      if (thermostat.currentTemp < 25 && thermostat.energySaving === true){
+      $('.bar').css("height", "-=10");
+    }
+    else if (thermostat.currentTemp < 32 && thermostat.energySaving === false){
+      $('.bar').css("height", "-=10");
+    }
     });
 
     $( 'button#down' ).click(function( event ) {
