@@ -29,13 +29,13 @@
         $('.usage').css("background-color", "red");
       };
       thermostat.increaseTemp();
-      $('.currentTemp').html(thermostat.currentTemp);
+        $('.currentTemp').html(thermostat.currentTemp);
       if (thermostat.currentTemp < 25 && thermostat.energySaving === true){
-      $('.bar').css("height", "-=10");
-    }
-    else if (thermostat.currentTemp < 32 && thermostat.energySaving === false){
-      $('.bar').css("height", "-=10");
-    }
+        $('.bar').css("height", "-=6");
+      }
+      else if (thermostat.currentTemp < 32 && thermostat.energySaving === false){
+        $('.bar').css("height", "-=6");
+      }
     });
 
     $( 'button#down' ).click(function( event ) {
@@ -52,6 +52,9 @@
       };
       thermostat.decreaseTemp();
       $('.currentTemp').html(thermostat.currentTemp);
+      if (thermostat.currentTemp > 10){
+        $('.bar').css("height", "+=6");
+      }
     });
 
     $( 'button#reset' ).click(function( event ) {
@@ -60,6 +63,7 @@
       $('.currentTemp').html(thermostat.currentTemp);
       thermostat.energySaving = true;
       $("button#psm").css("background-color", "green");
+      $('.bar').css("height", "120px");
     });
 
     $( 'button#psm' ).click(function( event ) {
